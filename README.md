@@ -1,19 +1,38 @@
-# Kişiye Özel Spor Antrenman Plan Uygulaması
-Bir müşteri, birlikte çalıştığı yazılım firmasından kişiye özel bir spor antrenman planı uygulaması
-geliştirmesini istemektedir.
-Uygulama, kullanıcıların adı, soyadı, doğum tarihi, cinsiyeti ve spor seviyesi (başlangıç, orta, ileri)
-bilgilerini almaktadır.
-Spor planında, baylar için haftada 7 gün, bayanlar için ise haftada 6 gün program uygulanacaktır.
-Kullanıcının yaşına bağlı olarak:
-30 yaş altı kullanıcılar için haftada 4 antrenman günü,
-30 yaş ve üzerindekiler için haftada 3 antrenman günü önerilecektir.
+# 🏋️ Kişiye Özel Spor Antrenman Planlayıcı (Personal Workout Planner)
 
-Kullanıcı, dinamik olarak x gün sonra belirli bir antrenman talebinde bulunacaktır. İlgili yazılım,
-kullanıcının bilgilerine göre aşağıdaki formatta bilgi vermelidir:
-“Sayın[isim][soyisim], [cinsiyet bilgisine göre bey/hanım][yaş] yaşındasınız. [x]gün
-sonrası için planlanan antrenman:[antrenman türü](Kardiyo, Güç Antrenmanı, Esneme veya Dinlenme)olacaktır.”
-Antrenman türleri, kullanıcının spor seviyesine göre otomatik olarak önerilecek ve kullanıcı tercihine göre
-ayarlanacaktır.
-Programda, antrenman günlerinin isimleri 1.gün, 2.gün, 3.gün, ... formatında gösterilecektir.
+Bu proje, kullanıcıların fiziksel özelliklerine ve spor geçmişine göre dinamik olarak **kişiye özel antrenman programı** oluşturan bir C# konsol uygulamasıdır.
 
-"Bilgisayar Mühendisliği 1.sınıf C# dilinde 1.ödev"
+## 📖 Proje Hakkında
+
+Uygulama, kullanıcıdan aldığı temel verileri (yaş, cinsiyet, spor seviyesi vb.) işleyerek, haftalık antrenman yoğunluğunu ve program içeriğini otomatik olarak belirler. Belirli bir gün sonrası için (örneğin 10 gün sonra) hangi antrenmanın yapılacağını hesaplar.
+
+## 🚀 Özellikler
+
+* **Kişiselleştirilmiş Hitap:** Cinsiyet bilgisine göre "Bey" veya "Hanım" hitabı.
+* **Yaş Bazlı Yoğunluk:**
+    * 30 yaş altı: Haftada 4 antrenman günü.
+    * 30 yaş ve üzeri: Haftada 3 antrenman günü.
+* **Cinsiyet Bazlı Program:**
+    * Erkekler: 7 günlük döngü.
+    * Kadınlar: 6 gün program + 1 gün tatil döngüsü.
+* **Seviye Kontrolü:** Başlangıç, Orta ve İleri seviyeye göre değişen egzersiz tipleri.
+* **Dinamik Gün Hesaplama:** Kullanıcının spora başlayacağı günü baz alarak, ileri bir tarihteki antrenman türünü (Kardiyo, Güç, Esneme vb.) matematiksel modülüs işlemi ile hesaplar.
+
+## 🛠️ Kullanılan Teknolojiler
+
+* C# Programming Language
+* .NET Framework / .NET Core
+* Console Application
+
+## 📸 Örnek Çıktı
+
+```text
+Adınız: Ahmet
+Soyadınız: Yılmaz
+Cinsiyetiniz: erkek
+Doğduğunuz yıl: 2000
+Spor Seviyeniz: orta
+Kaç gün sonra spora başlayacaksınız? 5
+
+Sayın Ahmet Yılmaz Bey 25 yaşındasınız. 
+5 gün sonrası için planlanan antrenman: Dinlenme olacaktır.
